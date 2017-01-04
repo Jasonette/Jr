@@ -1,3 +1,3 @@
 [build]
-  publish = "public"
-  command = "gulp"
+  publish = "dist"
+  command = "npm build"
