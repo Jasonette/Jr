@@ -27,6 +27,7 @@ PATHS:
   sass:
     - "bower_components/foundation-sites/scss"
     - "bower_components/motion-ui/src"
+    - "bower_components/wenk/src"
   # Paths to JavaScript libraries, which are combined into one file
   javascript:
     # Libraries required by Foundation
