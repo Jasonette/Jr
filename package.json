@@ -1,0 +1,40 @@
+{
+  "name": "crepido",
+  "version": "1.0.0",
+  "description": "Base for static websites with Pug and SASS.",
+  "keywords": [
+    "pug",
+    "sass",
+    "gulp",
+    "base",
+    "starter"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Luke Ramsden",
+    "email": "lukeramsden8@gmail.com",
+    "url": "https://www.github.com/lukeramsden"
+  },
+  "homepage": "https://crepido.js.org/",
+  "repository": "lukeramsden/crepido",
+  "bugs": {
+    "url": "https://github.com/lukeramsden/crepido/issues",
+    "email": "lukeramsden8@gmail.com"
+  },
+  "scripts": {
+    "build": "gulp"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2"
+  }
+}
