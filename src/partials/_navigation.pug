@@ -1,14 +1,16 @@
-.nav(data-sticky-container)
-  .title-bar(data-sticky data-options="marginTop:0;" style="width:100%")
-    .title-bar-left
-      span.title-bar-title Jason Registry
-    .title-bar-right
-      ul.menu.align-right.simple
-        li
-          a(href='#') One
-        li
-          a(href='#') Two
-        li
-          a(href='#') Three
-        li
-          a(href='#') Four
+.nav
+  #mobile-nav.title-bar(data-responsive-toggle='nav', data-hide-for='medium')
+    button.menu-icon(type='button', data-toggle='nav')
+    .title-bar-title Menu
+  #nav.title-bar(data-animate="hinge-in-from-top hinge-out-from-top")
+    row.align-spaced.menu.simple
+      .hide-for-small-only.columns
+        span.title-bar-title(data-hide-for='medium') Jason Registry
+      .shrink.columns
+        a.nav-link(href='#') One
+      .shrink.columns
+        a.nav-link(href='#') Two
+      .shrink.columns
+        a.nav-link(href='#') Three
+      .shrink.columns
+        a.nav-link(href='#') Four

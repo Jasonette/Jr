@@ -52,10 +52,11 @@ $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
+$really-dark-gray: #1a1a1f;
 $black: #0a0a0a;
 $white: #fefefe;
 $foundation-palette: (
-  primary: $white,
+  primary: #1779ba,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -412,8 +413,10 @@ $mediaobject-image-width-stacked: 100%;
 $menu-margin: 0;
 $menu-margin-nested: 1rem;
 $menu-item-padding: 0.7rem 1rem;
-$menu-item-color-active: $white;
-$menu-item-background-active: get-color(primary);
+$menu-item-color: $white;
+$menu-item-color-active: $black;
+$menu-item-color-hover: get-color(primary);
+$menu-item-background-active: $white;
 $menu-icon-spacing: 0.25rem;
 $menu-item-background-hover: $dark-gray;
 $menu-border: $light-gray;
