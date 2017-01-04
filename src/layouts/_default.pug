@@ -1,0 +1,15 @@
+doctype html
+include ../partials/_mixins.pug
+html.no-js(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    block title
+      title Jason Registry
+    link(rel='stylesheet', href='assets/css/app.css')
+    block head
+  body
+    block body
+    block foot
+    script(src='assets/js/app.js')
