@@ -1,42 +1,35 @@
-const   fs = require('fs');
-const   gulp = require('gulp');
-const   pug = require('gulp-pug');
-const   runSequence = require('run-sequence')
-const   concat = require('gulp-concat');
-const   uglify = require('gulp-uglify');
-const   rimraf = require('rimraf');
-const   cleanCSS = require('gulp-clean-css');
-const   sourcemaps = require('gulp-sourcemaps');
-const   autoprefixer = require('gulp-autoprefixer');
-const   htmlbeautify = require('gulp-html-beautify');
-const   sass = require('gulp-sass');
+const   gulp        = require('gulp');
+var     $           = require('gulp-load-plugins')();
+const   rimraf      = require('rimraf');
+const   runSequence = require('run-sequence');
 
 gulp.task('pug', function() {
   return gulp.src('./dev/web/pages/*.pug')
-    .pipe(pug())
-    .pipe(htmlbeautify())
+    .pipe($.pug())
+    .pipe($.htmlBeautify())
     .pipe(gulp.dest('./public/'))
 });
 
 gulp.task('sass', function() {
   return gulp.src('./dev/static/sass/global.scss')
-    .pipe(sourcemaps.init({largeFile: true}))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 3 versions']
+    .pipe($.sourcemaps.init({largeFile: true}))
+    .pipe($.sass({
+      outputStyle: 'compressed'
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+        browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']
     }))
-    .pipe(cleanCSS())
-    .pipe(sourcemaps.write())
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('./public/'))
 });
 
 gulp.task('sass:dev', function() {
   return gulp.src('./dev/static/sass/global.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-      browsers: ['last 3 versions']
+    .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.autoprefixer({
+        browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']
     }))
-    .pipe(gulp.dest('./public/'))
+    .pipe($.gulp.dest('./public/'))
 });
 
 gulp.task('font', function() {
@@ -45,15 +38,15 @@ gulp.task('font', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src(['./dev/static/js/vendor/jquery.js', './dev/static/js/**/*.js'])
-      .pipe(concat('dist.js'))
-      .pipe(uglify())
+    return gulp.src(['./dev/static/js/**/*.js'])
+      .pipe($.concat('dist.js'))
+      .pipe($.uglify())
       .pipe(gulp.dest('./public/'))
 });
 
 gulp.task('scripts:dev', function() {
     return gulp.src(['./dev/static/js/vendor/jquery.js', './dev/static/js/**/*.js'])
-      .pipe(concat('dist.js'))
+      .pipe($.concat('dist.js'))
       .pipe(gulp.dest('./public/'))
 });
 
@@ -67,6 +60,8 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('default', function() {
+  console.log("Loaded plugins: ")
+  console.log(Object.keys($));
   runSequence(
     'clean',
     'pug',

@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 // Vendor
+// Don't import Sassy-Lists, it's imported by Foundation
 @import "vendor/normalize";
+@import "vendor/foundation/main";
 
 // Custom
 @import "styles/core";

@@ -1,1 +1,1 @@
-$(function() {});
+$(document).foundation();
