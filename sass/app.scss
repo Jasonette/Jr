@@ -3,7 +3,6 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
-@import 'wenk.scss';
 
 @include foundation-global-styles;
 //@include foundation-grid;
@@ -52,6 +51,5 @@
 @include motion-ui-animations;
 
 // Custom components
-@import 'components/foundation-icons';
 @import 'components/title-bar';
 @import 'components/custom';

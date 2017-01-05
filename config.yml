@@ -19,7 +19,8 @@ PATHS:
   sass:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
-    - "node_modules/wenk/src"
+    - "node_modules/wenk/dist"
+    - "node_modules/foundation-icons"
   # Paths to JavaScript libraries, which are combined into one file
   javascript:
     # Libraries required by Foundation

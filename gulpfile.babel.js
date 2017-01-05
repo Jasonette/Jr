@@ -25,11 +25,8 @@ function loadConfig() {
   return yaml.load(ymlFile);
 }
 
-gulp.task('default',
-  gulp.series(gulp.parallel(sass, javascript)));
-
-function sass() {
-  return gulp.src('src/assets/scss/app.scss')
+gulp.task('sass', function() {
+  return gulp.src('sass/app.scss')
     .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
     .pipe($.sass({
         includePaths: PATHS.sass
@@ -40,10 +37,10 @@ function sass() {
     }))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
-}
+    .pipe(gulp.dest('assets/css'))
+});
 
-function javascript() {
+gulp.task('js', function() {
   return gulp.src(PATHS.javascript)
     .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
     .pipe($.babel({
@@ -56,10 +53,14 @@ function javascript() {
       })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/js'));
-}
+    .pipe(gulp.dest('assets/js'));
+});
 
-function watch() {
-  gulp.watch('sass/**/*.scss').on('all', sass);
-  gulp.watch('assets/js/**/*.js').on('all', javascript);
-}
+gulp.task('default',
+  gulp.series(gulp.parallel('sass', 'js')));
+
+gulp.task('watch', function() {
+  gulp.series('default');
+  gulp.watch('sass/**/*.scss').on('all', gulp.series('sass'));
+  gulp.watch('assets/js/**/*.js').on('all', gulp.series('js'));
+});
