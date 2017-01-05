@@ -1,0 +1,20 @@
+.row.align-spaced
+  .shrink.columns
+    form#form(data-abide novalidate)
+      label
+        | GitHub Repo
+        .input-group
+          span.input-group-label github.com/
+          input.input-group-field(type="text" placeholder="facebook/react" required)
+      p.help-text e.g. twbs/bootstrap
+      fieldset.text-center.fieldset
+        legend Supported Platforms
+        input#checkbox-ios(type='checkbox')
+        label(for='#checkbox-ios') iOS
+        input#checkbox-android(type='checkbox')
+        label(for='#checkbox-android') Android
+      .alert.callout.small(data-abide-error='', data-closable, style='display: none;')
+        p
+          i.fi-alert
+          |  Error
+      button.button.float-right(type="submit" value="Submit") Submit
