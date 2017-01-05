@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 module.exports = {
   init: function () {
     var uristring = process.env.MONGODB_URI
-    var port = process.env.PORT || 5000
+    var port = process.env.PORT || 5000 // eslint-disable-line
 
     mongoose.connect(uristring, function (err, res) {
       if (err) {
@@ -15,7 +15,7 @@ module.exports = {
       name: String,
       url: String
     })
-    Extension = mongoose.model('extensions', extensionSchema)
-    return Extension
+    Extension = mongoose.model('extensions', extensionSchema) // eslint-disable-line
+    return Extension // eslint-disable-line
   }
 }

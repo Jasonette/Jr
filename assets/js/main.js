@@ -1,1 +1,1 @@
-$(document).foundation()
+$(document).foundation() // eslint-disable-line
