@@ -4,9 +4,8 @@
   "description": "Jason Registry",
   "license": "MIT",
   "main": "index.js",
-  "scripts": {
-    "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scripts": {
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,13 @@
   },
   "homepage": "https://github.com/Jasonette/Jr#readme",
   "dependencies": {
-    "express": "^4.14.0",
-    "mongoose": "^4.7.6"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+	"mongoose": "^4.7.6"
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   }
 }
