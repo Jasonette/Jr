@@ -9,7 +9,7 @@
     "prestart": "gulp",
     "start": "node ./bin/www",
     "start:dev": "node ./bin/www",
-    "test": "standard"
+    "test": "snazzy"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "motion-ui": "^1.2.2",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
+    "snazzy": "^5.0.0",
     "wenk": "^1.0.4",
     "yargs": "^3.8.0"
   },
