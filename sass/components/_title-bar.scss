@@ -1,0 +1,31 @@
+#mobile-nav {
+  z-index: 10;
+}
+
+#nav {
+  @include breakpoint(small only) {
+    & {
+      background-color: $really-dark-gray;
+    }
+  }
+}
+
+.nav-link {
+  color: $menu-item-color;
+  &:hover {
+    color: $menu-item-color-hover;
+  }
+}
+
+.no-js {
+  @include breakpoint(small only) {
+    .top-bar {
+      display: none;
+    }
+  }
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
