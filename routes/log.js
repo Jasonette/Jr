@@ -1,13 +1,21 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var fs = require('fs-extra')
+var router = express.Router()
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.send('Log page')
-});
+  fs.readFile('log.txt', (err, data) => {
+    if (err) throw err
+    else res.send("" + data)
+  })
+})
 
 router.get('/:request', function(req, res) {
-  res.send(req.params)
-});
+  res.send('Request logged')
+  console.log(req.params.request)
+  fs.outputFile('log.txt', req.params.request, (err) => {
+    if (err) throw err
+  })
+})
 
-module.exports = router;
+module.exports = router
