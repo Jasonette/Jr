@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 
 router.get('/:request', function(req, res) {
   res.send('Request logged')
-  console.log(req.params.request)
+  console.log("Request: " + req.params.request)
   fs.outputFile('log.txt', req.params.request, (err) => {
     if (err) throw err
   })
