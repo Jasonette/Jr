@@ -57,5 +57,5 @@ gulp.task('default',
 gulp.task('watch', function () {
   gulp.series('default')
   gulp.watch('sass/**/*.scss').on('all', gulp.series('sass'))
-  gulp.watch('assets/js/**/*.js').on('all', gulp.series('js'))
+  gulp.watch(['assets/js/**/*.js', '!assets/js/bundle.js']).on('all', gulp.series('js'))
 })
