@@ -2,7 +2,6 @@ var express = require('express')
 var fs = require('fs-extra')
 var router = express.Router()
 
-/* GET home page. */
 router.get('/', function (req, res) {
   fs.readFile('log.txt', (err, data) => {
     if (err) throw err
