@@ -1,6 +1,8 @@
 .row.align-spaced
   .shrink.columns
-    form#form(data-abide)
+    form#form(data-abide, novalidate)
+      .success.callout.small.response
+        p Response
       label
         | GitHub Repo
         .input-group
@@ -17,4 +19,6 @@
         p
           i.fi-alert
           |  Error
+        button.close-button(aria-label='Dismiss alert', type='button', data-close='')
+          span(aria-hidden='true') &times;
       button.button.float-right(type="submit" value="Submit") Submit
