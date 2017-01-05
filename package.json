@@ -7,7 +7,8 @@
   "main": "index.js",
   "scripts": {
     "prestart": "gulp",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "start:dev": "node ./bin/www"
   },
   "repository": {
     "type": "git",
