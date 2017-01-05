@@ -1,20 +1,12 @@
 var express = require('express')
-var fs = require('fs-extra')
 var router = express.Router()
 
 router.get('/', function (req, res) {
-  fs.readFile('log.txt', (err, data) => {
-    if (err) throw err
-    else res.send('' + data)
-  })
+  res.send('repo: ' + req.query.repo + ' - ios: ' + req.query.ios + ' - android: ' + req.query.android)
 })
 
-router.get('/:request', function (req, res) {
-  res.send('Request logged')
-  console.log('Request: ' + req.params.request)
-  fs.appendFile('log.txt', req.params.request + '\n', (err) => {
-    if (err) throw err
-  })
+router.post('/', function (req, res) {
+  res.send('repo: ' + req.body.repo + ' - ios: ' + req.body.ios + ' - android: ' + req.body.android)
 })
 
 module.exports = router
