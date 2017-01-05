@@ -15,7 +15,7 @@ module.exports = {
       name: String,
       url: String
     });
-    Extension = mongoose.model('extensions', postSchema);
+    Extension = mongoose.model('extensions', extensionSchema);
     return Extension;
   }
 }
