@@ -2,6 +2,7 @@
   "name": "jr",
   "version": "0.0.1",
   "description": "Jason Registry",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "start": "node index",
