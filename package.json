@@ -47,6 +47,7 @@
     "mongoose": "^4.7.6",
     "morgan": "~1.7.0",
     "motion-ui": "^1.2.2",
+    "node-sass": "3.7.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
     "snazzy": "^5.0.0",
