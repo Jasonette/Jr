@@ -6,9 +6,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "prestart": "gulp",
+    "heroku-postbuild": "gulp",
     "start": "node ./bin/www",
-    "start:dev": "node ./bin/www",
     "test": "snazzy"
   },
   "engines": {
