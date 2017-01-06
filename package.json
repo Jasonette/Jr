@@ -6,7 +6,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "gulp",
+    "heroku-postbuild": "./bin/build.sh",
     "start": "node ./bin/www",
     "test": "snazzy"
   },
