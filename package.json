@@ -11,6 +11,9 @@
     "start:dev": "node ./bin/www",
     "test": "snazzy"
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jasonette/Jr.git"
