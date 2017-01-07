@@ -1,5 +1,14 @@
 var formUrl = 'http://jasonx.herokuapp.com/jrs.json'
 $(document).foundation()
+superplaceholder({
+  el: document.querySelector('#repo'),
+  sentences: ['facebook/react', 'twbs/bootstrap', 'angular/angular.js', 'vuejs/vue', 'jashkenas/backbone', 'emberjs/ember.js', 'mozbrick/brick'],
+  options: {
+    loop: true,
+    shuffle: true,
+    startOnFocus: false
+  }
+})
 $('#form').submit(function(e) {
   e.preventDefault()
   var data = $('#form').serializeArray()
