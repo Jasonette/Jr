@@ -7,7 +7,6 @@ COMPATIBILITY:
   - "ie >= 9"
   - "ios >= 7"
 
-
 # Gulp will reference these paths when it copies files
 PATHS: 
   # Paths to Sass libraries, which can then be loaded with @import

@@ -6,7 +6,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm rebuild node-sass && gulp",
+    "heroku-postbuild": "npm rebuild node-sass && gulp --production",
     "start": "node ./bin/www",
     "test": "snazzy"
   },
