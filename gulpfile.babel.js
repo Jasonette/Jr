@@ -39,7 +39,7 @@ gulp.task('js', function () {
   return gulp.src(PATHS.javascript)
     .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
     .pipe($.babel({
-      ignore: ['what-input.js']
+      ignore: ['what-input.js', 'jquery.js']
     }))
     .pipe($.concat('bundle.js'))
     .pipe($.if(PRODUCTION, $.uglify()
