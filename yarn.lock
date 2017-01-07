@@ -649,6 +649,10 @@ balanced-match@^0.4.1, balanced-match@^0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
+balloon-css@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/balloon-css/-/balloon-css-0.4.0.tgz#0d6edf8bf595f16b21ef88a6a676caa5a418b955"
+
 basic-auth@~1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-1.0.4.tgz#030935b01de7c9b94a824b29f3fccb750d3a5290"
