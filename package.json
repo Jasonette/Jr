@@ -7,8 +7,7 @@
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm rebuild node-sass && gulp --production",
-    "start": "node ./bin/www",
-    "test": "snazzy"
+    "start": "node ./bin/www"
   },
   "engines": {
     "node": "4.1.1"
@@ -52,7 +51,6 @@
     "node-sass": "3.7.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
-    "snazzy": "^5.0.0",
     "superplaceholder": "^0.1.1",
     "yargs": "^3.8.0"
   },
