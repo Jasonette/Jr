@@ -4734,10 +4734,6 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
-wenk@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/wenk/-/wenk-1.0.4.tgz#44a12eee164729189053eb700c2add29b9e4aba4"
-
 what-input@^4.0.3:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/what-input/-/what-input-4.0.4.tgz#14bf1a8c5eb31cdc7b6e0f3d7f23739fd92367c7"
