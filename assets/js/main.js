@@ -15,6 +15,7 @@ $('#form').submit(function(e) {
   form.validate()
   var data = form.serializeArray()
   data[0].value = "https://github.com/" + data[0].value
+  console.log(data)
   if (form.valid()) {
     $.ajax({
       url: formUrl,
