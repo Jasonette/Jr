@@ -1,4 +1,5 @@
-#search.input-group
-  input.input-group-field.search-placeholder(type='search' placeholder="find extensions")
-  .input-group-button
-    input.button(type='button', value='Search')
+form(data-abide action="/search/" novalidate)
+  #search.input-group
+    input.search-input.input-group-field.search-placeholder(type='search' name="search" placeholder="find extensions" required)
+    .input-group-button
+      input.search.button(type='submit', value='Search')

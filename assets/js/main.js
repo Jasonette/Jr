@@ -16,16 +16,16 @@ superplaceholder({
 })
 // Search bar placeholder
 superplaceholder({
-    el: document.querySelector('.search-placeholder'),
-    sentences: repos,
-    options: {
-        startOnFocus: true,
-        loop: true,
-        shuffle: true
-    }
+  el: document.querySelector('.search-placeholder'),
+  sentences: repos,
+  options: {
+    startOnFocus: true,
+    loop: true,
+    shuffle: true
+  }
 })
 // Form submit
-$('#form').submit(function(e) {
+$('#form').submit((e) => {
   // Prevent default action
   e.preventDefault()
   var form = $('#form')
@@ -35,19 +35,19 @@ $('#form').submit(function(e) {
   // Serialize form data to array
   var data = form.serializeArray()
   // Prepend github url to repo
-  data[0].value = "https://github.com/" + data[0].value
+  data[0].value = 'https://github.com/' + data[0].value
   if (form.valid()) {
     // Ajax POST data to formUrl
     $.ajax({
       url: formUrl,
       type: 'post',
       data: data,
-      success: function(data, status, jqXHR) {
+      success: function (data, status, jqXHR) {
         response.addClass('success')
         response.removeClass('alert')
         response.html(jqXHR.responseText)
       },
-      error: function(jqXHR, status, err) {
+      error: function (jqXHR, status, err) {
         response.addClass('alert')
         response.removeClass('success')
         response.html(jqXHR.responseText)

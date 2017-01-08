@@ -14,7 +14,6 @@ PATHS:
     - "node_modules/foundation-sites/scss"
     - "node_modules/motion-ui/src"
     - "node_modules/foundation-icons"
-    - "node_modules/balloon-css/src"
   # Paths to JavaScript libraries, which are combined into one file
   javascript:
     # Libraries required by Foundation
