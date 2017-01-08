@@ -4,3 +4,5 @@ npm-debug.log
 bower_components
 dist
 *.swp
+assets/js/bundle.js
+assets/css/app.css
