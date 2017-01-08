@@ -6,8 +6,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm rebuild node-sass && gulp --production",
-    "start": "node ./bin/www"
+    "rebuild": "npm rebuild node-sass",
+    "heroku-postbuild": "npm run rebuild && npm run npm run build:production",
+    "start": "node ./bin/www",
+    "build:production": "gulp --production",
+    "build:dev": "gulp"
   },
   "engines": {
     "node": "4.1.1"
