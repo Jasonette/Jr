@@ -1,13 +1,10 @@
 .nav
-  //- #mobile-nav.title-bar(data-responsive-toggle='nav', data-hide-for='medium')
-  //-   button.menu-icon(type='button', data-toggle='nav')
-  //-   .title-bar-title Menu
-  #nav.title-bar(data-animate="hinge-in-from-top hinge-out-from-top")
-    row.menu.simple
-      .columns
-        span.title-bar-title(data-hide-for='medium') Jason Registry
-      //- .shrink.columns
-      //-   a.nav-link(href='#') One
-      .small-6.columns.top-bar-right
-        include ../partials/_search
-        
+  #mobile-nav.title-bar(data-responsive-toggle='nav', data-hide-for='medium' style="display:none")
+    button.menu-icon(type='button', data-toggle='nav')
+    .title-bar-title Menu
+  #nav.top-bar(data-animate="hinge-in-from-top hinge-out-from-top")
+    .top-bar-left
+      ul.dropdown.menu(data-dropdown-menu)
+        li.menu-text Jason Registry
+    .top-bar-right
+      include ../partials/_search
