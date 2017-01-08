@@ -3,16 +3,11 @@
   //-   button.menu-icon(type='button', data-toggle='nav')
   //-   .title-bar-title Menu
   #nav.title-bar(data-animate="hinge-in-from-top hinge-out-from-top")
-    row.align-spaced.menu.simple
+    row.menu.simple
       .columns
         span.title-bar-title(data-hide-for='medium') Jason Registry
       //- .shrink.columns
       //-   a.nav-link(href='#') One
-      //- .shrink.columns
-      //-   a.nav-link(href='#') Two
-      //- .shrink.columns
-      //-   a.nav-link(href='#') Three
-      //- .shrink.columns
-      //-   a.nav-link(href='#') Four
-      //- .shrink.columns
-      //-   a.nav-link(href='#') Five
+      .small-6.columns.top-bar-right
+        include ../partials/_search
+        
