@@ -49,7 +49,7 @@ $('#form').submit(function(e) {
       },
       error: function(jqXHR, status, err) {
         window.alert(err)
-        console.log(err)
+        console.log(jqXHR)
       }
     })
   }
