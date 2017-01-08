@@ -46,5 +46,6 @@ PATHS:
     # - "node_modules/foundation-sites/js/foundation.tooltip.js"
     - "node_modules/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
     - "node_modules/superplaceholder/dist/superplaceholder.js"
+    - "node_modules/jquery-validation/dist/jquery.validate.js"
     # Paths to your own project code are here
     - "assets/js/main.js"

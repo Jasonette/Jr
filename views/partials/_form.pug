@@ -1,13 +1,14 @@
 .row.align-spaced
   .shrink.columns
-    form#form(data-abide, action="http://jasonx.herokuapp.com/jrs.json", method="post")
-      //- .success.callout.small.response
-      //-   p Response
+    form#form(data-abide novalidate)
+      .success.callout.small.response
+        p Response
       label
         | GitHub Repo
         .input-group
           span.input-group-label github.com/
           input#repo.input-group-field(type="text" name="jr[url]" placeholder="facebook/react" required)
+        span.form-error Required
       p.help-text e.g. twbs/bootstrap
       fieldset.text-center.fieldset
         legend Supported Platforms
@@ -15,10 +16,8 @@
         label(for='#checkbox-ios') iOS
         input#checkbox-android(type='checkbox' name="android")
         label(for='#checkbox-android') Android
-      .alert.callout.small(data-abide-error='', data-closable, style='display: none;')
+      .alert.callout.small(data-abide-error, style='display: none;')
         p
           i.fi-alert
           |  Error
-        button.close-button(aria-label='Dismiss alert', type='button', data-close='')
-          span(aria-hidden='true') &times;
       button.button.float-right(type="submit" value="Submit") Submit

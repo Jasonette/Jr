@@ -9,26 +9,25 @@ superplaceholder({
     startOnFocus: false
   }
 })
-$('form').submit(function() {
-  var $m = $(this).find('[name="jr[url]"]')
-  $m.val('https://github.com/' + $m.val())
-});
-// $('#form').submit(function(e) {
-//   e.preventDefault()
-//   var data = $('#form').serializeArray()
-//   data[0].value = "https://github.com/" + data[0].value
-//   console.log(data)
-//   $.ajax({
-//     url: formUrl,
-//     type: 'post',
-//     data: data,
-//     success: function(data, status, jqXHR) {
-//       console.log(jqXHR.responseText)
-//       $('.response').html(jqXHR.responseText)
-//     },
-//     error: function(jqXHR, status, err) {
-//       window.alert(err)
-//       console.log(err)
-//     }
-//   })
-// })
+$('#form').submit(function(e) {
+  e.preventDefault()
+  var form = $('#form')
+  form.validate()
+  var data = form.serializeArray()
+  data[0].value = "https://github.com/" + data[0].value
+  if (form.valid()) {
+    $.ajax({
+      url: formUrl,
+      type: 'post',
+      data: data,
+      success: function(data, status, jqXHR) {
+        console.log(jqXHR.responseText)
+        $('.response').html(jqXHR.responseText)
+      },
+      error: function(jqXHR, status, err) {
+        window.alert(err)
+        console.log(err)
+      }
+    })
+  }
+})
