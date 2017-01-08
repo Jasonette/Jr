@@ -29,14 +29,13 @@ $('#form').submit(function(e) {
   // Prevent default action
   e.preventDefault()
   var form = $('#form')
+  var response = $('.response')
   // jQuery validation plugin
   form.validate()
   // Serialize form data to array
   var data = form.serializeArray()
   // Prepend github url to repo
   data[0].value = "https://github.com/" + data[0].value
-  // Log data
-  console.log(data)
   if (form.valid()) {
     // Ajax POST data to formUrl
     $.ajax({
@@ -44,12 +43,14 @@ $('#form').submit(function(e) {
       type: 'post',
       data: data,
       success: function(data, status, jqXHR) {
-        console.log(jqXHR.responseText)
-        $('.response').html(jqXHR.responseText)
+        response.addClass('success')
+        response.removeClass('alert')
+        response.html(jqXHR.responseText)
       },
       error: function(jqXHR, status, err) {
-        window.alert(err)
-        console.log(jqXHR)
+        response.addClass('alert')
+        response.removeClass('success')
+        response.html(jqXHR.responseText)
       }
     })
   }
