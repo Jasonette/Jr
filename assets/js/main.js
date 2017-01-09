@@ -50,12 +50,7 @@ $('#form').submit((e) => {
       error: function (jqXHR, status, err) {
         response.addClass('alert')
         response.removeClass('success')
-        var j = JSON.parse(jqXHR.responseText).errors
-        response.empty()
-        for (var i = 0; i < j.length; i++) {
-          response.append(j[i])
-          response.append("<br>")
-        }
+        response.html(jqXHR.responseText)
       }
     })
   }
