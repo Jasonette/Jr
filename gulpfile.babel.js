@@ -27,30 +27,24 @@ function loadConfig () {
 }
 
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build',
-  gulp.series(clean, gulp.parallel(pages, sass, javascript, images, copy)))
-
-// Build the site, run the server, and watch for file changes
-gulp.task('default',
-  gulp.series('build', server, watch))
 
 // Delete the "dist" folder
 // This happens every time a build starts
-function clean (done) {
+gulp.task('clean', function(done) {
   rimraf(PATHS.dist, done)
-}
+})
 
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 function copy () {
   return gulp.src(PATHS.assets)
-    .pipe(gulp.dest(PATHS.dist + '/assets'))
+    .pipe(gulp.dest(PATHS.dist))
 }
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass () {
-  return gulp.src('src/assets/scss/app.scss')
+  return gulp.src('src/sass/app.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -59,11 +53,9 @@ function sass () {
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
-    // Comment in the pipe below to run UnCSS in production
-    // .pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
+    .pipe(gulp.dest(PATHS.dist + '/css'))
     .pipe(browser.reload({
       stream: true
     }))
@@ -91,7 +83,7 @@ function javascript() {
       })
     ))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/js'))
+    .pipe(gulp.dest(PATHS.dist + '/js'))
 }
 
 // Copy images to the "dist" folder
@@ -101,7 +93,7 @@ function images() {
     .pipe($.if(PRODUCTION, $.imagemin({
       progressive: true
     })))
-    .pipe(gulp.dest(PATHS.dist + '/assets/img'))
+    .pipe(gulp.dest(PATHS.dist + '/img'))
 }
 
 // Start a server with BrowserSync to preview the site in
@@ -127,3 +119,10 @@ function watch() {
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload))
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload))
 }
+
+gulp.task('build',
+  gulp.series('clean', gulp.parallel(pages, sass, javascript, images, copy)))
+
+// Build the site, run the server, and watch for file changes
+gulp.task('default',
+  gulp.series('build', server, watch))
