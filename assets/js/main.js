@@ -45,12 +45,14 @@ $('#form').submit((e) => {
       success: function (data, status, jqXHR) {
         response.addClass('success')
         response.removeClass('alert')
+        response.html('Response')
         response.html(jqXHR.responseText)
       },
       error: function (jqXHR, status, err) {
         response.addClass('alert')
         response.removeClass('success')
-        response.html(jqXHR.responseText)
+        response.html('Response')
+        response.html(JSON.parse(jqXHR.responseText).errors)
       }
     })
   }
