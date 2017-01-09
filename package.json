@@ -43,18 +43,7 @@
     "node-sass": "^4.2.0",
     "pug": "^2.0.0-beta6",
     "rimraf": "^2.4.3",
-    "snazzy": "^5.0.0",
     "superplaceholder": "^0.1.1",
     "yargs": "^6.6.0"
-  },
-  "devDependencies": {
-    "standard": "^8.6.0"
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "globals": [
-      "$",
-      "superplaceholder"
-    ]
   }
 }
