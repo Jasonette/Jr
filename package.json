@@ -1,0 +1,47 @@
+{
+  "name": "jr",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --production"
+  },
+  "author": "Luke Ramsden <lukeramsden8@gmail.com> (https://www.github.com/lukeramsden/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jasonette/Jr"
+  },
+  "bugs": {
+    "url": "https://github.com/Jasonette/Jr/issues",
+    "email": "lukeramsden8@gmail.com"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.7.2",
+    "browser-sync": "^2.10.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cli": "^1.2.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-extname": "^0.2.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uncss": "^1.0.1",
+    "js-yaml": "^3.4.6",
+    "rimraf": "^2.4.3",
+    "yargs": "^3.8.0"
+  }
+}
