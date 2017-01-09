@@ -51,6 +51,7 @@ PATHS:
     - "node_modules/foundation-sites/js/foundation.zf.responsiveAccordionTabs.js"
     # Other libs
     - "node_modules/superplaceholder/dist/superplaceholder.js"
+    - "node_modules/jquery-validation/dist/jquery.validate.js"
     # Paths to your own project code are here
     - "src/assets/js/!(main).js"
     - "src/assets/js/main.js"
