@@ -56,7 +56,7 @@ $('#form').submit((e) => {
         success.hide()
         error.show()
         error.html('Error')
-        error.html(jqXHR.status + ' ' + jqXHR.statusText)
+        error.html(jqXHR.status + ' ' + jqXHR.statusText + '<br>')
         if (j.jr) {
           error.html(
             jqXHR.status + ' ' + jqXHR.statusText +
