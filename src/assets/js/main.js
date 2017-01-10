@@ -33,37 +33,40 @@ $('#form').submit((e) => {
       url: formUrl,
       type: 'post',
       data: data,
-      success: function (data, status, jqXHR) {
+      success: function(data, status, jqXHR) {
         var j = jqXHR.responseJSON
         console.log(jqXHR)
         error.hide()
         success.show()
         success.html('Success')
         success.html(
-          jqXHR.status + ' ' + jqXHR.statusText
-          + '<br>' + 'ID: ' + j.id
-          + '<br>' + 'Classname: ' + j.classname
-          + '<br>' + 'Version: ' + j.version
-          + '<br>' + 'Name: ' + j.name
-          + '<br>' + j.platform
-          + '<br>' + j.sha
+          jqXHR.status + ' ' + jqXHR.statusText +
+          '<br>' + 'ID: ' + j.id +
+          '<br>' + 'Classname: ' + j.classname +
+          '<br>' + 'Version: ' + j.version +
+          '<br>' + 'Name: ' + j.name +
+          '<br>' + j.platform +
+          '<br>' + j.sha
         )
       },
-      error: function (jqXHR, status, err) {
+      error: function(jqXHR, status, err) {
         var j = jqXHR.responseJSON
         console.log(jqXHR)
         success.hide()
         error.show()
         error.html('Error')
-        error.html(
-          jqXHR.status + ' ' + jqXHR.statusText
-          + '<br>' + 'Classname: ' + j.jr.classname
-          + '<br>' + 'Version: ' + j.jr.version
-          + '<br>' + 'Name: ' + j.jr.name
-          + '<br>' + j.jr.platform
-        )
+        error.html(jqXHR.status + ' ' + jqXHR.statusText)
+        if (j.jr) {
+          error.html(
+            jqXHR.status + ' ' + jqXHR.statusText +
+            '<br>' + 'Classname: ' + j.jr.classname +
+            '<br>' + 'Version: ' + j.jr.version +
+            '<br>' + 'Name: ' + j.jr.name +
+            '<br>' + j.jr.platform
+          )
+        }
         // l to not conflict with e
-        for(var l = 0; l < j.errors.length; l++) {
+        for (var l = 0; l < j.errors.length; l++) {
           error.append('<br>' + j.errors[l].charAt(0).toUpperCase() + j.errors[l].substring(1))
         }
       }
