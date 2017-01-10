@@ -13,11 +13,14 @@
   word-wrap: break-word;
 }
 
-#error{
+#error {
   pre {
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size: 12px;
     padding: 10px;
+  }
+  a {
+    text-decoration: underline;
   }
 }

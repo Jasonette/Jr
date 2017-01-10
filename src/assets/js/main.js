@@ -1,5 +1,5 @@
 // Where to POST data to
-var formUrl = 'http://jasonx.herokuapp.com/jrs.json'
+var formUrl = 'https://jasonx.herokuapp.com/jrs.json'
 // List of repos for placeholder
 var repos = ['facebook/react', 'twbs/bootstrap', 'gliechtenstein/JasonConsoleAction']
 // Foundation 6
