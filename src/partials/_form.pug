@@ -8,16 +8,5 @@
         .input-group
           span.input-group-label github.com/
           input#repo.repo-placeholder.input-group-field(type="text" name="jr[url]" placeholder="facebook/react" required)
-        span.form-error Required
       p.help-text e.g. twbs/bootstrap
-      fieldset.text-center.fieldset
-        legend Supported Platforms
-        input#checkbox-ios(type='checkbox' name="ios")
-        label(for='#checkbox-ios') iOS
-        input#checkbox-android(type='checkbox' name="android")
-        label(for='#checkbox-android') Android
-      .alert.callout.small(data-abide-error, style='display: none;')
-        p
-          i.fi-alert
-          |  Error
       button.button.float-right(type="submit" value="Submit") Submit
