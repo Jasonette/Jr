@@ -43,7 +43,7 @@ $('#form').submit((e) => {
           jqXHR.status + ' ' + jqXHR.statusText
           + '<br>' + 'ID: ' + j.id
           + '<br>' + 'Classname: ' + j.classname
-          + '<br>' + 'Version: '
+          + '<br>' + 'Version: ' + j.version
           + '<br>' + 'Name: ' + j.name
           + '<br>' + j.platform
           + '<br>' + j.sha
