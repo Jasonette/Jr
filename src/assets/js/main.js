@@ -67,7 +67,7 @@ $('#form').submit((e) => {
         }
         // l to not conflict with e
         for (var l = 0; l < j.errors.length; l++) {
-          error.append('<br>' + j.errors[l].charAt(0).toUpperCase() + j.errors[l].substring(1))
+          error.append(j.errors[l].charAt(0).toUpperCase() + j.errors[l].substring(1) + '<br>')
         }
       }
     })
