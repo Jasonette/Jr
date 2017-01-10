@@ -1859,10 +1859,6 @@ formidable@1.0.x:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.0.17.tgz#ef5491490f9433b705faa77249c99029ae348559"
 
-foundation-icons@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/foundation-icons/-/foundation-icons-1.0.1.tgz#006a8e7808ce964e0326f0f4c49d653d4840c4df"
-
 foundation-sites@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/foundation-sites/-/foundation-sites-6.3.0.tgz#19b2d6e5edced8418a4a7b4a1d65287ee1c8d512"
