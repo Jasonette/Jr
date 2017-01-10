@@ -14,16 +14,6 @@ superplaceholder({
     startOnFocus: false
   }
 })
-// Search bar placeholder
-superplaceholder({
-  el: document.querySelector('.search-placeholder'),
-  sentences: repos,
-  options: {
-    startOnFocus: true,
-    loop: true,
-    shuffle: true
-  }
-})
 // Form submit
 $('#form').submit((e) => {
   // Prevent default action
