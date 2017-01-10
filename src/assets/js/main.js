@@ -57,12 +57,10 @@ $('#form').submit((e) => {
         error.html('Error')
         error.html(
           jqXHR.status + ' ' + jqXHR.statusText
-          + '<br>' + 'ID: ' + j.jr.id
           + '<br>' + 'Classname: ' + j.jr.classname
           + '<br>' + 'Version: ' + j.jr.version
           + '<br>' + 'Name: ' + j.jr.name
           + '<br>' + j.jr.platform
-          + '<br>' + j.jr.sha
         )
         // l to not conflict with e
         for(var l = 0; l < j.errors.length; l++) {
