@@ -50,6 +50,7 @@ $('#form').submit((e) => {
         )
       },
       error: function (jqXHR, status, err) {
+        var j = jqXHR.responseJSON
         console.log(jqXHR)
         success.hide()
         error.show()
@@ -64,8 +65,8 @@ $('#form').submit((e) => {
           + '<br>' + j.sha
         )
         // l to not conflict with e
-        for(var l = 0; l < jqXHR.responseJSON.errors.length; l++) {
-          error.append('<br>' + jqXHR.responseJSON.errors[l].charAt(0).toUpperCase() + jqXHR.responseJSON.errors[l].substring(1))
+        for(var l = 0; l < j.errors.length; l++) {
+          error.append('<br>' + j.errors[l].charAt(0).toUpperCase() + j.errors[l].substring(1))
         }
       }
     })
