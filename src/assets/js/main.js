@@ -41,10 +41,10 @@ $('#form').submit((e) => {
         success.html('Success')
         success.html(
           jqXHR.status + ' ' + jqXHR.statusText +
-          '<br>' + 'ID: ' + j.id +
-          '<br>' + 'Classname: ' + j.classname +
-          '<br>' + 'Version: ' + j.version +
-          '<br>' + 'Name: ' + j.name +
+          '<br> ID: ' + j.id +
+          '<br> Classname: ' + j.classname +
+          '<br> Version: ' + j.version +
+          '<br> Name: ' + j.name +
           '<br>' + j.platform +
           '<br>' + j.sha
         )
@@ -59,9 +59,9 @@ $('#form').submit((e) => {
         if (j.jr) {
           error.html(
             jqXHR.status + ' ' + jqXHR.statusText +
-            '<br>' + 'Classname: ' + j.jr.classname +
-            '<br>' + 'Version: ' + j.jr.version +
-            '<br>' + 'Name: ' + j.jr.name +
+            '<br> Classname: ' + j.jr.classname +
+            '<br> Version: ' + j.jr.version +
+            '<br> Name: ' + j.jr.name +
             '<br>' + j.jr.platform
           )
         }
