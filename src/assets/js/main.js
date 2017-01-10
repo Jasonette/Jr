@@ -43,16 +43,21 @@ $('#form').submit((e) => {
       type: 'post',
       data: data,
       success: function (data, status, jqXHR) {
+        console.log(data)
+        console.log(status)
+        console.log(jqXHR)
         response.addClass('success')
         response.removeClass('alert')
         response.html('Response')
         response.html(jqXHR.responseText)
       },
       error: function (jqXHR, status, err) {
+        console.log(err)
+        console.log(status)
+        console.log(jqXHR)
         response.addClass('alert')
         response.removeClass('success')
         response.html('Response')
-        response.html(JSON.parse(jqXHR.responseText).errors)
       }
     })
   }
