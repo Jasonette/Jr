@@ -9,7 +9,8 @@ A web interface for registering and discovering Jasonette Extensions
 ### Installation
 
 1. Clone Repo
-2. Run `npm i -g yarn gulp gulp-cli && yarn` in folder you just cloned to install dependencies
+2. Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#install-the-gulp-command)
+2. Run `npm i -g yarn && yarn` in folder you just cloned to install dependencies
 
 ### Usage
 
