@@ -1,7 +1,7 @@
 // Where to POST data to
 var formUrl = 'http://jasonx.herokuapp.com/jrs.json'
 // List of repos for placeholder
-var repos = ['facebook/react', 'twbs/bootstrap', 'angular/angular.js', 'vuejs/vue', 'jashkenas/backbone', 'emberjs/ember.js', 'mozbrick/brick']
+var repos = ['facebook/react', 'twbs/bootstrap', 'gliechtenstein/JasonConsoleAction']
 // Foundation 6
 $(document).foundation()
 // Submit form placeholder
@@ -19,7 +19,8 @@ $('#form').submit((e) => {
   // Prevent default action
   e.preventDefault()
   var form = $('#form')
-  var response = $('.response')
+  var success = $('#success')
+  var error = $('#error')
   // jQuery validation plugin
   form.validate()
   // Serialize form data to array
@@ -36,18 +37,23 @@ $('#form').submit((e) => {
         console.log(data)
         console.log(status)
         console.log(jqXHR)
-        response.addClass('success')
-        response.removeClass('alert')
-        response.html('Response')
-        response.html(jqXHR.responseText)
+        error.hide()
+        success.show()
+        success.html('Success')
+        success.html(jqXHR.responseText)
       },
       error: function (jqXHR, status, err) {
-        console.log(err)
-        console.log(status)
         console.log(jqXHR)
-        response.addClass('alert')
-        response.removeClass('success')
-        response.html('Response')
+        success.hide()
+        error.show()
+        error.html('Error')
+        error.html(
+          jqXHR.status + ' ' + jqXHR.statusText
+        )
+        // l to not conflict with e
+        for(var l = 0; l < jqXHR.responseJSON.errors.length; l++) {
+          error.append('<br>' + jqXHR.responseJSON.errors[l].charAt(0).toUpperCase() + jqXHR.responseJSON.errors[l].substring(1))
+        }
       }
     })
   }

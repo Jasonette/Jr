@@ -115,7 +115,7 @@ function reload(done) {
 function watch() {
   gulp.watch(PATHS.assets, copy)
   gulp.watch('src/**/*.pug').on('all', gulp.series(pages, reload))
-  gulp.watch('src/assets/scss/**/*.scss').on('all', gulp.series(sass, reload))
+  gulp.watch('src/sass/**/*.scss').on('all', gulp.series(sass, reload))
   gulp.watch('src/assets/js/**/*.js').on('all', gulp.series(javascript, reload))
   gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, reload))
 }

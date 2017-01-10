@@ -1,8 +1,10 @@
 .row.align-spaced
-  .shrink.columns
+  .small-12.medium-8.large-6.columns
     form#form(data-abide novalidate)
-      .success.callout.small.response
-        p Response
+      #error.alert.callout.small.response(style="display:none")
+        p Error
+      #success.success.callout.small.response(style="display:none")
+        p Error
       label
         | GitHub Repo
         .input-group
