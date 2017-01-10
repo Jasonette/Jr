@@ -51,6 +51,7 @@ $('#form').submit((e) => {
       },
       error: function(jqXHR, status, err) {
         var j = jqXHR.responseJSON
+        var jrl = data[0].value + '/blob/master/jr.json'
         console.log(jqXHR)
         success.hide()
         error.show()
@@ -59,10 +60,9 @@ $('#form').submit((e) => {
         if (j.jr) {
           error.html(
             jqXHR.status + ' ' + jqXHR.statusText +
-            '<br> Classname: ' + j.jr.classname +
-            '<br> Version: ' + j.jr.version +
-            '<br> Name: ' + j.jr.name +
-            '<br>' + j.jr.platform
+            '<pre><a target="_blank" href="' + jrl + '">jr.json found:</a>' +
+            '<br>' + JSON.stringify(j.jr, null, 2) +
+            '</pre>'
           )
         }
         // l to not conflict with e

@@ -12,3 +12,12 @@
   word-break: keep-all;
   word-wrap: break-word;
 }
+
+#error{
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 12px;
+    padding: 10px;
+  }
+}
