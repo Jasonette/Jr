@@ -34,13 +34,20 @@ $('#form').submit((e) => {
       type: 'post',
       data: data,
       success: function (data, status, jqXHR) {
-        console.log(data)
-        console.log(status)
+        var j = jqXHR.responseJSON
         console.log(jqXHR)
         error.hide()
         success.show()
         success.html('Success')
-        success.html(jqXHR.responseText)
+        success.html(
+          jqXHR.status + ' ' + jqXHR.statusText
+          + '<br>' + 'ID: ' + j.id
+          + '<br>' + 'Classname: ' + j.classname
+          + '<br>' + 'Version: '
+          + '<br>' + 'Name: ' + j.name
+          + '<br>' + j.platform
+          + '<br>' + j.sha
+        )
       },
       error: function (jqXHR, status, err) {
         console.log(jqXHR)
